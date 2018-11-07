@@ -1,8 +1,8 @@
 {
-    "name"  : "kakserpom/Zer0",
+    "name"  : "Zer0-Framework/Zer0",
     "type"  : "framework",
-    "keywords": ["Zer0"],
-    "homepage": "https://github.com/kakserpom/Zer0",
+    "keywords": ["Zer0", "highload"],
+    "homepage": "https://github.com/Zer0-Framework/Zer0",
     "license" : "GPL-3.0-or-later",
     "description": "",
     "authors" : [
