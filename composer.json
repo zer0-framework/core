@@ -26,7 +26,6 @@
         "kakserpom/phpdaemon": "dev-master",
         "cheprasov/php-redis-client": "^1.8",
         "ext-ctype": "*",
-        "ext-pdo": "*",
         "ext-gettext": "*",
         "ext-posix": "*",
         "ext-iconv": "*",
