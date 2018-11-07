@@ -6,7 +6,7 @@ if (!defined('ZERO_ROOT')) {
     define('ZERO_ROOT', $_SERVER['ZERO_ROOT']);
 }
 
-require ZERO_ROOT . '/libraries/Zer0/src/bootstrap.php';
+require __DIR__ . '/../bootstrap.php';
 $app->broker('Autorun')->get();
 /**
  * @var \Zer0\HTTP\HTTP $http
