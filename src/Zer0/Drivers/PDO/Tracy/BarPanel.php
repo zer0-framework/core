@@ -68,7 +68,7 @@ class BarPanel implements \Tracy\IBarPanel
      * Renders HTML code for custom tab.
      * @return string
      */
-    public function getTab()
+    public function getTab(): ?string
     {
         $queries = $this->pdo->getQueryLog();
         $html = '<img src="' . $this->icon . '" alt="PDO queries logger" /> ';
@@ -89,7 +89,7 @@ class BarPanel implements \Tracy\IBarPanel
      * Renders HTML code for custom panel.
      * @return string
      */
-    public function getPanel()
+    public function getPanel(): ?string
     {
         if (class_exists('\SqlFormatter')) {
             \SqlFormatter::$pre_attributes = 'style="color: black;"';
