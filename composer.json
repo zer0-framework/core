@@ -24,7 +24,6 @@
         "ext-pcntl": "*",
         "kakserpom/quicky": "dev-master",
         "kakserpom/phpdaemon": "dev-master",
-        "cheprasov/php-redis-client": "^1.8",
         "ext-ctype": "*",
         "ext-gettext": "*",
         "ext-posix": "*",
