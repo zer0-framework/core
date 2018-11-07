@@ -25,7 +25,6 @@
         "kakserpom/quicky": "dev-master",
         "kakserpom/phpdaemon": "dev-master",
         "cheprasov/php-redis-client": "^1.8",
-        "ezyang/htmlpurifier": "^4.10.0",
         "ext-ctype": "*",
         "ext-pdo": "*",
         "ext-gettext": "*",
