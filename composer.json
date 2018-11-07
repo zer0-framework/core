@@ -20,16 +20,13 @@
         "php": ">=7.2",
         "ext-curl": "*",
         "ext-json": "*",
-        "ext-yaml": "*",
         "ext-pcntl": "*",
-        "kakserpom/quicky": "dev-master",
         "kakserpom/phpdaemon": "dev-master",
         "ext-ctype": "*",
         "ext-gettext": "*",
         "ext-posix": "*",
         "ext-iconv": "*",
-        "ext-mbstring": "*",
-        "ext-igbinary": "*"
+        "ext-mbstring": "*"
     },
     "suggest": {
     },
