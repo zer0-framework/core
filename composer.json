@@ -30,11 +30,6 @@
     },
     "suggest": {
     },
-    "bin": [
-        "bin/cli",
-        "bin/queue-worker",
-        "bin/sockjs-server"
-    ],
     "autoload": {
         "classmap": ["src/"]
     },
