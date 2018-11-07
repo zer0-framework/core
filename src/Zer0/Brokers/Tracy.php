@@ -46,7 +46,7 @@ class Tracy extends Base
         Debugger::$showBar = false;
         Debugger::$scream = true;
         Debugger::$strictMode = true;
-        Debugger::$dontRegisterHandlers = true;
+        Debugger::$disableHandlers = true;
         Debugger::enable(false);
 
         foreach ($config->panels ?? [] as $panel) {

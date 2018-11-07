@@ -52,6 +52,9 @@ class HTTP
      */
     public function prepareEnv(): void
     {
+        if (!$_GET && ($query = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY)) !== null) {
+            parse_str($query, $_GET);
+        }
         foreach ($_SERVER as $key => $value) {
             if (strncmp($key, 'DEFAULT_', 8) !== 0) {
                 continue;

@@ -70,7 +70,7 @@ class BarPanel implements \Tracy\IBarPanel
      * Renders HTML code for custom tab.
      * @return string
      */
-    public function getTab()
+    public function getTab(): ?string
     {
         return '<img src="' . $this->icon . '" height=24 width=24 alt="YAML" /> ';
     }
@@ -79,7 +79,7 @@ class BarPanel implements \Tracy\IBarPanel
      * Renders HTML code for custom panel.
      * @return string
      */
-    public function getPanel()
+    public function getPanel(): ?string
     {
         $files = $this->config->getLoadedFiles();
         $html = '<h1 ' . $this->title_attributes . '>' . $this->title . '</h1>';

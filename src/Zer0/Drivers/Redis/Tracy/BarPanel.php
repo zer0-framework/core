@@ -70,7 +70,7 @@ class BarPanel implements \Tracy\IBarPanel
      * Renders HTML code for custom tab.
      * @return string
      */
-    public function getTab()
+    public function getTab(): ?string
     {
         $queries = $this->redis->getQueryLog();
         if (count($queries) === 0) {
@@ -91,7 +91,7 @@ class BarPanel implements \Tracy\IBarPanel
      * Renders HTML code for custom panel.
      * @return string
      */
-    public function getPanel()
+    public function getPanel(): ?string
     {
         $queries = $this->redis->getQueryLog();
         if (count($queries) === 0) {
