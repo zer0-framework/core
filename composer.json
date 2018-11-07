@@ -14,7 +14,7 @@
     ],
     "support" : {
         "email" : "kak.serpom.po.yaitsam@gmail.com",
-        "issues": "https://github.com/kakserpom/Zer0/issues"
+        "issues": "https://github.com/Zer0-Framework/Zer0/issues"
     },
     "require": {
         "php": ">=7.2",
