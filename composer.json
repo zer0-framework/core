@@ -1,0 +1,54 @@
+{
+    "name"  : "kakserpom/Zer0",
+    "type"  : "framework",
+    "keywords": ["Zer0"],
+    "homepage": "https://github.com/kakserpom/Zer0",
+    "license" : "GPL-3.0-or-later",
+    "description": "",
+    "authors" : [
+        {
+            "name"      : "Vasily Zorin",
+            "email"     : "kak.serpom.po.yaitsam@gmail.com",
+            "role"      : "Maintainer"
+        }
+    ],
+    "support" : {
+        "email" : "kak.serpom.po.yaitsam@gmail.com",
+        "issues": "https://github.com/kakserpom/Zer0/issues"
+    },
+
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/kakserpom/tracy"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-yaml": "*",
+        "ext-pcntl": "*",
+        "kakserpom/quicky": "dev-master",
+        "kakserpom/phpdaemon": "dev-master",
+        "kakserpom/tracy": "dev-dev-v2.5-fix",
+        "jandrabek/tracy-gitversion-panel": "^2.0",
+        "netpromotion/profiler": "^1.3",
+        "cheprasov/php-redis-client": "^1.8",
+        "ezyang/htmlpurifier": "^4.10.0",
+        "ext-ctype": "*",
+        "ext-pdo": "*",
+        "ext-gettext": "*",
+        "ext-posix": "*",
+        "ext-iconv": "*",
+        "ext-mbstring": "*",
+        "ext-igbinary": "*"
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "classmap": ["src/","libraries/"]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

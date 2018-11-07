@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+define('ZERO_ROOT', realpath(__DIR__ . '/../../..'));
+$configFile = ZERO_ROOT . '/conf/queue-worker.conf';
+ob_start();
+include ZERO_ROOT . '/vendor/kakserpom/phpdaemon/bin/phpd';
