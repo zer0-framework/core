@@ -3,6 +3,8 @@
 namespace Zer0\Cli\Controllers;
 
 use Zer0\Cli\AbstractController;
+use Zer0\HTTP\Router\JSGenerator;
+use Zer0\HTTP\Router\NginxGenerator;
 
 /**
  * Class Build
@@ -34,7 +36,7 @@ final class Build extends AbstractController
 
         $destfile = $config->nginx_folder . '/routes.conf';
 
-        $routesGenerator = new \Zer0\HTTP\Router\NginxGenerator($config->Routes->toArray());
+        $routesGenerator = new NginxGenerator($config->Routes->toArray());
 
         $destfile = $config->nginx_folder . '/server.conf';
         ob_start();
@@ -57,11 +59,7 @@ final class Build extends AbstractController
         $destfile = ZERO_ROOT . '/public/js/Routes.cfg.js';
 
         $routes = $this->app->broker('HTTP')->getConfig()->Routes;
-        /*if (file_exists($destfile) && filemtime($destfile) >= $routes->lastModified()) {
-            return;
-        }*/
-
-        $generator = new \Zer0\HTTP\Router\JSGenerator($routes->toArray());
+        $generator = new JSGenerator($routes->toArray());
         $cfg = $generator->generate();
 
         // Writing into the file

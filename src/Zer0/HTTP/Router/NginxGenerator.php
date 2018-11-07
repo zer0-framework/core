@@ -88,7 +88,7 @@ class NginxGenerator extends Basic
 
                 $cfg .= "\tfastcgi_pass fastcgi;\n";
                 $cfg .= "\tinclude fastcgi_params;\n";
-                $cfg .= "\tfastcgi_param SCRIPT_FILENAME \$projectDir/libraries/Zer0/src/public/index.php;\n";
+                $cfg .= "\tfastcgi_param SCRIPT_FILENAME \$projectDir/vendor/kakserpom/Zer0/src/public/index.php;\n";
                 $cfg .= "\tfastcgi_param APPNAME \"\Zer0\\FastCGI\\Application\";\n";
                 $cfg .= "\tfastcgi_param REQUEST_URI \$request_uri;\n";
                 $cfg .= "\tfastcgi_param ZERO_ROOT \$projectDir;\n";
