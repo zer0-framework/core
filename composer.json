@@ -37,7 +37,7 @@
     "suggest": {
     },
     "autoload": {
-        "classmap": ["src/","libraries/"]
+        "classmap": ["src/"]
     },
     "minimum-stability": "dev",
     "prefer-stable": true
