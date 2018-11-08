@@ -7,8 +7,6 @@ if (!defined('ZERO_ROOT')) {
 
 require ZERO_ROOT . '/vendor/autoload.php';
 
-var_dump(class_exists('Zer0\TestCase'));exit;
-
 $app = new \Zer0\App(is_file(ZERO_ROOT . '/.env') ? rtrim(file_get_contents(ZERO_ROOT . '/.env')) : 'dev', [
     ZERO_ROOT . '/conf',
     ZERO_ROOT . '/usr/conf',
