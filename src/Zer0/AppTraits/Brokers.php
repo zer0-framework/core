@@ -45,7 +45,9 @@ trait Brokers
             }
             return $this->brokers[$name] = $broker = new $class($this);
         } finally {
-            $broker->setNameIfEmpty($name);
+            if (isset($broker)) {
+                $broker->setNameIfEmpty($name);
+            }
         }
     }
 }
