@@ -113,4 +113,12 @@ abstract class Base
 
         return $instance;
     }
+
+    /**
+     * @param string $name
+     */
+    public function reset(string $name): void
+    {
+        unset($this->instances[$name]);
+    }
 }
