@@ -18,10 +18,8 @@
     },
     "require": {
         "php": ">=7.2",
-        "ext-curl": "*",
         "ext-json": "*",
         "ext-pcntl": "*",
-        "kakserpom/phpdaemon": "dev-master",
         "ext-ctype": "*",
         "ext-gettext": "*",
         "ext-posix": "*",
@@ -29,6 +27,8 @@
         "ext-mbstring": "*"
     },
     "suggest": {
+        "kakserpom/phpdaemon": "dev-master",
+        "ext-curl": "*"
     },
     "autoload": {
         "classmap": ["src/", "tests/"]
