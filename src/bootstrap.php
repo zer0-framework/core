@@ -11,10 +11,10 @@ if (!defined('ZERO_ROOT')) {
 require ZERO_ROOT . '/vendor/autoload.php';
 
 try {
-    Dotenv\Dotenv::create(ZERO_ROOT, '.env')->load();
+    $_ENV = array_merge($_ENV, Dotenv\Dotenv::create(ZERO_ROOT, '.env')->load());
 } catch (InvalidPathException $e) {}
 try {
-    Dotenv\Dotenv::create(ZERO_ROOT, '.env.build')->load();
+    $_ENV = array_merge($_ENV, Dotenv\Dotenv::create(ZERO_ROOT, '.env.build')->load());
 } catch (InvalidPathException $e) {}
 
 $app = new App($_ENV['ENV'] ?? 'dev', [
