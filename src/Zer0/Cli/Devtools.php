@@ -45,7 +45,13 @@ final class Devtools extends AbstractController
         $set = rtrim($set);
         $override = rtrim($override);
 
+        $date = date('r') ;
         $meta = "<?php
+/**
+    The file has been generated automatically
+    Date: {$date}
+    DO NOT MODIFY THIS FILE MANUALLY, YOUR CHANGES WILL BE OVERWRITTEN!
+**/
 namespace PHPSTORM_META {
 
     registerArgumentsSet(
