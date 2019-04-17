@@ -1,4 +1,7 @@
 <?php
+use \Zer0\App;
+use \Dotenv\Exception\InvalidPathException;
+
 if (!defined('ZERO_ROOT')) {
     define('ZERO_ROOT', getcwd());
 } else {
@@ -7,10 +10,15 @@ if (!defined('ZERO_ROOT')) {
 
 require ZERO_ROOT . '/vendor/autoload.php';
 
-$app = new \Zer0\App(is_file(ZERO_ROOT . '/.env') ? rtrim(file_get_contents(ZERO_ROOT . '/.env')) : 'dev', [
+try {
+    Dotenv\Dotenv::create(ZERO_ROOT, '.env')->load();
+} catch (InvalidPathException $e) {}
+try {
+    Dotenv\Dotenv::create(ZERO_ROOT, '.env.build')->load();
+} catch (InvalidPathException $e) {}
+
+$app = new App($_ENV['ENV'] ?? 'dev', [
     ZERO_ROOT . '/conf',
     ZERO_ROOT . '/usr/conf',
 ]);
-if (is_file(ZERO_ROOT . '/.build-timestamp')) {
-    $app->buildTimestamp = (int)file_get_contents(ZERO_ROOT . '/.build-timestamp');
-}
+$app->buildTimestamp = $_ENV['BUILD_TS'] ?? null;
