@@ -55,7 +55,7 @@ namespace PHPSTORM_META {
 
     expectedArguments(\Zer0\AppTraits\Brokers::broker(), 0, argumentsSet('brokers'));
 
-    override(\Zer0\AppTraits\Brokers::factory(0), map([
+    override(\Zer0\AppTraits\Brokers::broker(0), map([
         '' => '@',
 {$override}
     ]));
