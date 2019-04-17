@@ -24,7 +24,8 @@
         "ext-gettext": "*",
         "ext-posix": "*",
         "ext-iconv": "*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "vlucas/phpdotenv": "^3.3"
     },
     "suggest": {
         "kakserpom/phpdaemon": "dev-master",
