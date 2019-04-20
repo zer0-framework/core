@@ -29,14 +29,14 @@ final class Devtools extends AbstractController
         foreach ($autoload as $class => $path) {
             if (preg_match('~^Zer0\\\\Brokers\\\\(\\w+)~', $class, $match)) {
                 $name = $match[1];
-                $class = '\\'. $match[0];
-                if (!isset($brokers[$name]) && $name !==  'Base') {
+                $class = '\\' . $match[0];
+                if (!isset($brokers[$name]) && $name !== 'Base') {
                     $brokers[$name] = $class;
                 }
             }
         }
 
-        $set = $override =  '';
+        $set = $override = '';
         foreach ($brokers as $name => $class) {
             $name = var_export($name, true);
             $set .= "        {$name},\n";
@@ -45,7 +45,7 @@ final class Devtools extends AbstractController
         $set = rtrim($set);
         $override = rtrim($override);
 
-        $date = date('r') ;
+        $date = date('r');
         $meta = "<?php
 /**
     The file has been generated automatically
