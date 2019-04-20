@@ -23,7 +23,7 @@ final class SessionTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->session = $this->app->broker('Session')->get();
+        $this->session = $this->app->factory('Session');
     }
 
     public function testSimple(): void

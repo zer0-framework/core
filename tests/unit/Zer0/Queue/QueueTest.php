@@ -36,7 +36,7 @@ final class QueueTest extends TestCase
         /**
          * @var RedisClient $redis
          */
-        $redis = $this->app->broker('Redis')->get();
+        $redis = $this->app->factory('Redis');
         $redis->eval("local keys=redis.call('keys', ARGV[1]);
         if table.getn(keys) > 0
             then

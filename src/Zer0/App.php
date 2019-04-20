@@ -46,7 +46,7 @@ class App
         static::$instance = $this;
         $this->env = $env;
         $this->config = new Config($env, $confDir, $this);
-        $tracy = $this->broker('Tracy')->get();
+        $tracy = $this->factory('Tracy');
         if ($tracy !== null) {
             $tracy->addPanel(new BarPanel($this->config));
         }
