@@ -1,6 +1,7 @@
 <?php
 use \Zer0\App;
 use \Dotenv\Exception\InvalidPathException;
+use Zer0\Helpers\ErrorsAreExceptions;
 
 if (!defined('ZERO_ROOT')) {
     define('ZERO_ROOT', getcwd());
@@ -9,6 +10,8 @@ if (!defined('ZERO_ROOT')) {
 }
 
 require ZERO_ROOT . '/vendor/autoload.php';
+
+ErrorsAreExceptions::makeItSo();
 
 try {
     $_ENV = array_merge($_ENV, Dotenv\Dotenv::create(ZERO_ROOT, '.env')->load());
