@@ -20,7 +20,7 @@ final class SomeTask extends \Zer0\Queue\TaskAbstract
     public function execute(): void
     {
         $this->foo = 'bar';
-
+        $this->log('some log message');
         $this->complete();
     }
 }

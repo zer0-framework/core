@@ -4,6 +4,7 @@ namespace Zer0\Brokers;
 
 use PHPDaemon\Core\ClassFinder;
 use Zer0\App;
+use Zer0\Config\Inline;
 use Zer0\Config\Interfaces\ConfigInterface;
 
 /**
@@ -73,6 +74,9 @@ abstract class Base
         $config = $this->app->config->{$broker};
         if (strlen($name)) {
             $config = $config->{$name};
+        }
+        if (is_array($config)) {
+            $config = new Inline($config);
         }
         return $config;
     }
