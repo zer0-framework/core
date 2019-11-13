@@ -15,11 +15,25 @@ final class SomeTask extends \Zer0\Queue\TaskAbstract
     public $foo;
 
     /**
+     * @var string
+     */
+    public $str;
+
+    /**
+     * SomeTask constructor.
+     * @param string $str
+     */
+    public function __construct(string $str = '') {
+        $this->str = $str;
+    }
+
+    /**
      *
      */
     public function execute(): void
     {
         $this->foo = 'bar';
+        $this->str = strrev($this->str);
         $this->log('some log message');
         $this->complete();
     }
