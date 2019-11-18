@@ -25,7 +25,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * This method is called after each test.
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
     }
 }
