@@ -17,7 +17,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * This method is called before each test.
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->app = $GLOBALS['app'];
     }
