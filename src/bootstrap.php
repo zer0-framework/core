@@ -5,8 +5,6 @@ use Zer0\Helpers\ErrorsAreExceptions;
 
 if (!defined('ZERO_ROOT')) {
     define('ZERO_ROOT', getcwd());
-} else {
-    chdir(ZERO_ROOT);
 }
 
 require ZERO_ROOT . '/vendor/autoload.php';
