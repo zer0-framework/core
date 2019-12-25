@@ -45,6 +45,9 @@ final class Devtools extends AbstractController
             $old = error_reporting();
             error_reporting(0);
             $returnClass = '\\' . $refClass->getMethod('get')->getReturnType();
+            if ($returnClass === '\\') {
+                continue;
+            }
             $overrideFactory .= "        {$name} => {$returnClass}::class,\n";
         }
         $set = rtrim($set);
@@ -75,7 +78,7 @@ namespace PHPSTORM_META {
     
     override(\Zer0\AppTraits\Brokers::factory(0), map([
         '' => '@',
-{$override}
+{$overrideFactory}
     ]));
 }
 ";
