@@ -36,14 +36,20 @@ final class Devtools extends AbstractController
             }
         }
 
-        $set = $override = '';
+        $set = $override = $overrideFactory = '';
         foreach ($brokers as $name => $class) {
             $name = var_export($name, true);
             $set .= "        {$name},\n";
             $override .= "        {$name} => {$class}::class,\n";
+            $refClass = new \ReflectionClass($class);
+            $old = error_reporting();
+            error_reporting(0);
+            $returnClass = '\\' . $refClass->getMethod('get')->getReturnType();
+            $overrideFactory .= "        {$name} => {$returnClass}::class,\n";
         }
         $set = rtrim($set);
         $override = rtrim($override);
+        $overrideFactory = rtrim($overrideFactory);
 
         $date = date('r');
         $meta = "<?php
