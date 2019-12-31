@@ -24,7 +24,7 @@ final class CacheTest extends TestCase
     /**
      * This method is called before each test.
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->pool = new RedisPool(new Inline(
