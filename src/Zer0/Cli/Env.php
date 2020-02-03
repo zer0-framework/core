@@ -43,7 +43,7 @@ final class Env extends AbstractController
     /**
      * @param string|null $name
      */
-    public function unsetAction(string $name = null, string $file = '.env')
+    public function unsetAction(string $name = null, string $file = '.env'): void
     {
         $path = ZERO_ROOT . '/' . $file;
         $env = \Dotenv\Dotenv::create(dirname($path), basename($path))->load();
@@ -62,7 +62,7 @@ final class Env extends AbstractController
     /**
      * @param string $file
      */
-    public function listAction(string $file = '.env')
+    public function listAction(string $file = '.env'): void
     {
         $path = ZERO_ROOT . '/' . $file;
         $env = \Dotenv\Dotenv::create(dirname($path), basename($path))->load();
