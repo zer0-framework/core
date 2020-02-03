@@ -51,24 +51,6 @@ final class QueueTest extends TestCase
         })->execute();
     }
 
-    public function testRaceCondition(): void
-    {
-        $pool = $this->app->factory('Queue');
-
-        $task = new RaceConditionTask();
-
-        $taskTwo = new RaceConditionTask();
-
-        $pool->enqueue($task);
-        $pool->enqueue($taskTwo);
-
-        $task = $pool->wait($task);
-        $taskTwo = $pool->wait($taskTwo);
-
-        self::assertEquals($task->result, $taskTwo->result);
-
-    }
-
     public function testThen(): void
     {
         $pool = $this->app->factory('Queue');
