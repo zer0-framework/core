@@ -11,12 +11,13 @@ require ZERO_ROOT . '/vendor/autoload.php';
 
 ErrorsAreExceptions::makeItSo();
 
-try {
-    $_ENV = array_merge($_ENV, Dotenv\Dotenv::create(ZERO_ROOT, '.env')->load());
-} catch (InvalidPathException $e) {}
-try {
-    $_ENV = array_merge($_ENV, Dotenv\Dotenv::create(ZERO_ROOT, '.env.build')->load());
-} catch (InvalidPathException $e) {}
+foreach (['.env', '.env.build'] as $filename) {
+    try {
+        $env = Dotenv\Dotenv::create(ZERO_ROOT, $filename)->load();
+        $_ENV = array_merge($_ENV, $env);
+        $_SERVER = array_merge($_SERVER, $env);
+    } catch (InvalidPathException $e) {}
+}
 
 $app = new App($_ENV['ENV'] ?? 'dev', [
     ZERO_ROOT . '/conf',
