@@ -42,9 +42,10 @@ final class Devtools extends AbstractController
             $set .= "        {$name},\n";
             $override .= "        {$name} => {$class}::class,\n";
             $refClass = new \ReflectionClass($class);
-            $old = error_reporting();
-            error_reporting(0);
-            $returnClass = '\\' . $refClass->getMethod('get')->getReturnType();
+            $returnClass = '\\' . (
+                $refClass->getMethod('get')->getReturnType()
+                ?? $refClass->getMethod('instantiate')->getReturnType()
+            );
             if ($returnClass === '\\') {
                 continue;
             }
