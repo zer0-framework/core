@@ -80,15 +80,7 @@ abstract class Base
         }
         return $config;
     }
-
-    /**
-     * @param ConfigInterface $config
-     * @return mixed
-     */
-    /**
-     * @param ConfigInterface $config
-     * @return mixed
-     */
+    
     /**
      * @param ConfigInterface $config
      * @return mixed
