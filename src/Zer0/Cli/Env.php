@@ -70,7 +70,7 @@ final class Env extends AbstractController
     public function listAction (string $file = '.env'): void
     {
         $path = ZERO_ROOT . '/' . $file;
-        $env  = \Dotenv\Dotenv::create(dirname($path), basename($path))->load();
+        $env  = self::loadEnv($file);
         foreach ($env as $key => $value) {
             echo $key . '=' . escapeshellarg($value) . PHP_EOL;
         }
