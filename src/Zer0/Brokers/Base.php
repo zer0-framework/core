@@ -85,14 +85,6 @@ abstract class Base
      * @param ConfigInterface $config
      * @return mixed
      */
-    /**
-     * @param ConfigInterface $config
-     * @return mixed
-     */
-    /**
-     * @param ConfigInterface $config
-     * @return mixed
-     */
     abstract public function instantiate(ConfigInterface $config);
 
     /**

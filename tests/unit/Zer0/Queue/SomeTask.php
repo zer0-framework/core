@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace Zer0\Queue;
 
 use Zer0\App;
+use Zer0\Queue\Exceptions\RuntimeException;
+use Zer0\Queue\Exceptions\WaitTimeoutException;
 use Zer0\Queue\Pools\RedisAsync;
 use PHPDaemon\Clients\Redis\Connection as RedisConnection;
 
@@ -48,6 +50,11 @@ final class SomeTask extends \Zer0\Queue\TaskAbstract
         $this->foo = 'bar';
         $this->str = strrev($this->str);
         $this->log('some log message');
+
+        if ($this->str === 'cba') {
+            throw new RuntimeException('aaa');
+        }
+
         $this->complete();
     }
 }
