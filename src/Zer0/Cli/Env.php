@@ -47,7 +47,10 @@ final class Env extends AbstractController
     {
         $contents = '';
         foreach ($env as $key => $value) {
-            $contents .= $key . '=' . escapeshellarg($value) . PHP_EOL;
+            if (!preg_match('~^[\w_\-]+$~', $value)) {
+                $value = escapeshellarg($value);
+            }
+            $contents .= $key . '=' . $value . PHP_EOL;
         }
         file_put_contents($path, $contents);
     }
