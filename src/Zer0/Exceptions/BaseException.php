@@ -26,6 +26,6 @@ abstract class BaseException extends \Exception
      */
     public function getPreviousStr ()
     {
-        return $this->previousStr ?? (string)$this->getPrevious ?? null;
+        return $this->previousStr ?? (string)$this->getPrevious() ?? null;
     }
 }
