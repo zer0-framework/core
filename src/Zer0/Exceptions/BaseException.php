@@ -18,7 +18,7 @@ abstract class BaseException extends \Exception
     {
         $this->previousStr = (string)$this->getPrevious();
 
-        return ['message', 'code', 'file', 'line', 'previousString'];
+        return ['message', 'code', 'file', 'line', 'previousStr'];
     }
 
     /**
