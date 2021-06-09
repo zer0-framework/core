@@ -52,7 +52,7 @@ final class SomeTask extends \Zer0\Queue\TaskAbstract
         $this->log('some log message');
 
         if ($this->str === 'cba') {
-            throw new RuntimeException('aaa');
+            throw new RuntimeException('aaa', 0, new \Exception('123'));
         }
 
         $this->complete();

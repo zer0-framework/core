@@ -22,10 +22,10 @@ abstract class BaseException extends \Exception
     }
 
     /**
-     * @return string|null
+     * 
      */
-    public function getPreviousStr ()
+    public function __wakeup ()
     {
-        return $this->previousStr ?? (string)$this->getPrevious() ?? null;
+        $this->message .= PHP_EOL . 'Previous: ' . $this->previousStr;
     }
 }
