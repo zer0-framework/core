@@ -16,16 +16,20 @@ abstract class BaseException extends \Exception
      */
     public function __sleep ()
     {
-        $this->previousStr = (string)$this->getPrevious();
+        if ($prev = $this->getPrevious()) {
+            $this->previousStr = (string)$prev;
+        }
 
         return ['message', 'code', 'file', 'line', 'previousStr'];
     }
 
     /**
-     * 
+     *
      */
     public function __wakeup ()
     {
-        $this->message .= PHP_EOL . 'Previous: ' . $this->previousStr;
+        if ($this->previousStr !== null) {
+            $this->message .= PHP_EOL . 'Previous: ' . $this->previousStr;
+        }
     }
 }
