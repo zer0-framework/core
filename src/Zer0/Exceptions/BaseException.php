@@ -26,7 +26,7 @@ abstract class BaseException extends \Exception
     /**
      *
      */
-    public function __wakeup ()
+    public function __wakeup (): void
     {
         if ($this->previousStr !== null) {
             $this->message .= PHP_EOL . 'Previous: ' . $this->previousStr;
